@@ -5,7 +5,7 @@ for (i = 0; i < formData.length; i++) {
   var inputElement = document.createElement('input');
   inputElement.id = control.id;
   inputElement.type = control.type;
-  inputElement.label = control.label;
+  inputElement.placeholder = control.label;
   inputElement.icon = control.icon;
 
   if (control.type === "select") {
@@ -15,15 +15,19 @@ for (i = 0; i < formData.length; i++) {
     inputElement.type = control.type;
     inputElement.label = control.label;
     inputElement.icon = control.icon;
-    // for (j = 0; j < control.options.length; j++){
-    //   inputElement.option[j] = control.option[j];
-    // }
+    var options = control.options;
+    for (j = 0; j < options.length; j++) {
+      var optionElement = document.createElement("option");
+      optionElement.value = options[j].value;
+      optionElement.innerHTML = options[j].label;
+      inputElement.appendChild(optionElement)
+    }
   } else if (control.type === "textarea") {
     inputElement.type === "textarea";
     var inputElement = document.createElement('textarea');
     inputElement.id = control.id;
     inputElement.type = control.type;
-    inputElement.label = control.label;
+    inputElement.placeholder = control.label;
     inputElement.icon = control.icon;
   }
 
