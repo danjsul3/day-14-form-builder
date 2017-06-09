@@ -39,6 +39,4 @@ submitBtn.setAttribute('id','submitBtn');
 submitBtn.setAttribute('type','button');
 submitBtn.setAttribute('value','Submit Form');
 submitBtn.setAttribute('width','20%');
-submitBtn.setAttribute('background-color', 'cornflowerblue');
-submitBtn.setAttribute('color','white');
 footer.appendChild(submitBtn);
